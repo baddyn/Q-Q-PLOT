@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
 
 from IPython.display import Markdown, display
 def printmd(string):
@@ -96,7 +91,7 @@ d=iris.data
 d.shape
 
 
-#sample 30 points randoly fro 150 point datset
+#sample 30 points randoly froM 150 point datset
 n=150;
 m=30;
 p=m/n;
@@ -109,6 +104,7 @@ for i in range(0,n):
 len(sampled_data)
 
 #note the size of sample willbe roughly 30 not perfect 30
+
 
 
 # In[ ]:
@@ -209,94 +205,4 @@ plt.show()
 
 #now  for ks test just one line
 stats.kstest(x,'norm')
-
-
-# In[10]:
-
-
-#mnist dataset
-#loading
-
-
-# In[11]:
-
-
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-
-d0=pd.read_csv('mnist_train.csv')
-print(d0.head(5)) #first 5 rows printed
-
-#save labels to a variable l
-l=d0['label']
-
-#drop the label feature and store pixel data in d
-d=d0.drop('label',axis=1)
-
-
-# In[12]:
-
-
-#now l is having labels and d is having data
-
-
-# In[13]:
-
-
-print(d.shape)
-print(l.shape)
-
-
-# In[14]:
-
-
-#display of a no.
-plt.figure(figsize=(7,7))
-idx=234
-
-grid_data=d.iloc[idx].as_matrix().reshape(28,28)
-plt.imshow(grid_data,interpolation='none',cmap='gray')
-plt.show()
-
-print(l[idx])
-
-
-# In[15]:
-
-
-#now pca will start
-#very important method for dealing with higher dimensions
-
-
-# In[9]:
-
-
-
-#pca self code
-
-#apply on 15k for time being
-
-labels=l.head(15000)
-data=d.head(15000)
-
-print("the shape of sample data",data.shape)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
